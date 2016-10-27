@@ -1,0 +1,41 @@
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'pangloss/vim-javascript'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Valloric/MatchTagAlways'
+Plugin 'majutsushi/tagbar'
+Plugin 'bling/vim-airline'
+Plugin 'digitaltoad/vim-pug'
+Plugin 'scrooloose/syntastic'
+
+"Plugin 'Shutnik/jshint2'
+call vundle#end()
+
+":silent ! ctags -R --languages=java,javascript
+"set tags=tags
+
+let NERDTreeShowHidden=1
+autocmd VimEnter * NERDTree
+autocmd BufWinEnter * NERDTreeMirror
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+map <F2> <plug>NERDTreeTabsToggle<CR>
+
+
+let g:UltiSnipsSnippetsDir="~/.vim/snips/"
+"let g:UltiSnipsSnippetDirectories=["snippets"]
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsListSnippets="<c-l>"
+
+let g:syntastic_check_on_open=1
+let g:syntastic_javascript_checkers = ['eslint']
+
+let g:ctrlp_working_path_mode = 0
+set wildignore+=*/node_modules/*
+
+set expandtab
