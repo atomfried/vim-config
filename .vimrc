@@ -10,8 +10,8 @@ else
 	call vundle#begin()
 	Plugin 'VundleVim/Vundle.vim'
 	Plugin 'scrooloose/nerdtree'
-	Plugin 'bling/vim-airline'
-  Plugin 'Valloric/MatchTagAlways'
+  Plugin 'bling/vim-airline'
+"Plugin 'Valloric/MatchTagAlways'
 	call vundle#end()
 	
 	let NERDTreeShowHidden=1
@@ -54,6 +54,6 @@ nmap <C-j> :tprev<CR>
 
 
 """""""""" COLORS """""""""""""
-color desert
-hi MatchParen cterm=none ctermbg=blue ctermfg=white
+"color desert
+"hi MatchParen cterm=none ctermbg=blue ctermfg=white
 
